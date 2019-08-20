@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>comum.mongodb.config</groupId>
 	<artifactId>comum-mongodb-config</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>MongoDB Config</name>
 	<description>lib for MongoDB Config</description>
 
@@ -20,12 +20,12 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</connection>
-		<developerConnection>scm:git:https://maven-release:maven-passwd@gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</developerConnection>
-		<url>https://gitlab.interno.srmasset.com/TRUSTHUB/common/comum-mongodb-config.git</url>
-		<tag>v0.0.2</tag>
+		<connection>scm:git:git@gitlab.interno.srmasset.com/COMUM/comum-mongodb-config.git</connection>
+		<developerConnection>scm:git:git@gitlab.interno.srmasset.com/COMUM/comum-mongodb-config.git</developerConnection>
+		<url>git@gitlab.interno.srmasset.com/COMUM/comum-mongodb-config.git</url>
+		<tag>HEAD</tag>
 	</scm>
-
+	
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,6 +42,40 @@
 			<optional>true</optional>
 		</dependency>
 	</dependencies>
+
+		<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tagNameFormat>v@{project.version}</tagNameFormat>
+					<checkModificationExcludes>
+						<checkModificationExclude>pom.xml</checkModificationExclude>
+						<checkModificationExclude>.gitlab-ci.yml</checkModificationExclude>
+					</checkModificationExcludes>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-scm-plugin</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<!-- <version>3.1</version> -->
+				<configuration>
+					<compilerArgument>-parameters</compilerArgument>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 
 	<repositories>
 		<repository>
@@ -64,10 +98,8 @@
 			<name>Repositório do Nexus</name>
 			<url>http://nexus.interno.srmasset.com/repository/releases/</url>
 		</repository>
-		<snapshotRepository>
-			<id>Nexus</id>
-			<name>Repositório do Nexus</name>
-			<url>http://nexus.interno.srmasset.com/repository/snapshots/</url>
-		</snapshotRepository>
 	</distributionManagement>
+
+
+
 </project>
