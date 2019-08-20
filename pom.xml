@@ -20,12 +20,12 @@
 	</properties>
 
 	<scm>
-		<connection>scm:git:git@gitlab.interno.srmasset.com/COMUM/reference/comum-mongodb-config.git</connection>
-		<developerConnection>scm:git:git@gitlab.interno.srmasset.com/COMUM/reference/comum-mongodb-config.git</developerConnection>
-		<url>git@gitlab.interno.srmasset.com/COMUM/reference/comum-mongodb-config.git</url>
+		<connection>scm:git:git@gitlab.interno.srmasset.com:COMUM/reference/comum-mongodb-config.git</connection>
+		<developerConnection>scm:git:git@gitlab.interno.srmasset.com:COMUM/reference/comum-mongodb-config.git</developerConnection>
+		<url>git@gitlab.interno.srmasset.com:COMUM/reference/comum-mongodb-config.git</url>
 		<tag>HEAD</tag>
 	</scm>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -43,7 +43,7 @@
 		</dependency>
 	</dependencies>
 
-		<build>
+	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
